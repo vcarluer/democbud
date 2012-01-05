@@ -2,7 +2,8 @@
 #{set title:'Home' /}
 
 #{if missions}
-	<div class="missions">
+	<div class="older-posts">
+	 <h3>Missions <span class="from">gouvernementales</span></h3>
 	#{list items:missions, as:'mission'}
 		 #{displayMission mission:mission /}
 	#{/list}

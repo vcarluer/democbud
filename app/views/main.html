@@ -11,10 +11,30 @@
         #{get 'moreScripts' /}
     </head>
     <body>
-    	<div id="title">                
+        
+        <div id="header">
+            <div id="logo">
+                dbud.
+            </div>
+            <ul id="tools">
+                <li>
+                    <a href="#">Inscrivez vous pour voter</a>
+                </li>
+            </ul>
+            <div id="title">
+                <span class="about">A propos</span>
                 <h1><a href="#">${siteTitle}</a></h1>
                 <h2>${siteBaseline}</h2>
             </div>
-        #{doLayout /}
+        </div>
+        
+        <div id="main">
+            #{doLayout /} 
+        </div>
+        
+        <p id="footer">
+            Une tentative de démocratie est une création de <a href="mailto:vcarluer@gmail.com">Vincent Carluer</a> et est propulsé par <a href="http://www.playframework.org">Play!</a> sur <a href="http://www.heroku.com">heroku</a>.
+        </p>
+        
     </body>
 </html>
