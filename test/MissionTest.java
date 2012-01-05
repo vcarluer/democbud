@@ -1,7 +1,13 @@
-import org.junit.*;
-import java.util.*;
-import play.test.*;
-import models.*;
+import java.util.List;
+
+import models.Mission;
+import models.Programme;
+
+import org.junit.Before;
+import org.junit.Test;
+
+import play.test.Fixtures;
+import play.test.UnitTest;
 
 public class MissionTest extends UnitTest {
 
@@ -36,5 +42,17 @@ public class MissionTest extends UnitTest {
 		Programme prog = progMis.get(0);
 		assertNotNull(prog);
 		assertEquals(progName, prog.name);
+	}
+	
+	@Test
+	public void MiniModelTest() {
+		Fixtures.loadModels("data.yml");
+		
+		assertEquals(2, Mission.count());
+		assertEquals(3, Programme.count());
+		
+		Mission m2 = Mission.find("byName", "Mission2").first();
+		assertNotNull(m2);
+		assertEquals(2, m2.programmes.size());
 	}
 }

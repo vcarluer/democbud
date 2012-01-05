@@ -1,4 +1,10 @@
 #{extends 'main.html' /}
 #{set title:'Home' /}
 
-#{welcome /}
+#{if missions}
+	#{list items:missions, as:'mission'}
+	<div class="mission">
+		<a href="#">${mission.name}</a>
+	</div>
+	#{/list}
+#{/if}
