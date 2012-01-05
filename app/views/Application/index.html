@@ -2,9 +2,9 @@
 #{set title:'Home' /}
 
 #{if missions}
+	<div class="missions">
 	#{list items:missions, as:'mission'}
-	<div class="mission">
-		<a href="#">${mission.name}</a>
-	</div>
+		 #{displayMission mission:mission /}
 	#{/list}
+	</div>
 #{/if}
